@@ -1,7 +1,8 @@
 import { db } from "../config/db.js";
 import { favoritesTable } from "../db/schema.js";
+import { eq } from "drizzle-orm";
+
 export const createFavorite = async (req, res) => {
-    console.log("REB", req.body);
   try {
     const { userId, recipeId, title, image, cookTime, servings } = req.body;
 
